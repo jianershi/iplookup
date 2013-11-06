@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--<link href="{{ url_for('static', filename='css/bootstrap.css') }}" type="text/css" rel="stylesheet" />-->
+<link href="{{ url_f(r('static', filename='prettify.css') }}l" type="text/css" rel="stylesheet" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--<link href="{{ url_for('static', filename='css/bootstrap-responsive.css') }}" rel="stylesheet">-->
+<script type="text/javascript" src="{{ url_for('static', filename='prettify.js') }}"></script>
+</head>
+
+<body onload="prettyPrint()" bgcolor="white">
+<div class="row-fluid">
+<div class="span12">
+<!--Sidebar content-->
+
+
+<pre class="prettyprint languague-css">
+<code class="language-json">
+{{ jsonipdata }}
+</code>
+</pre>
+
+</div>
+</div>
+
+
+</body>
+</html>
