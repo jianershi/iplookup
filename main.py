@@ -29,7 +29,7 @@ def index():
     if (lon == None or lat == None):
         return render_template('iplookup.html', jsonipdata=jsonipdata)
     elif (lon != None and lat !=None):
-        return render_template('iplookup.html', jsonipdata=jsonipdata, lon=lon, lat=lat)
+        return render_template('iplookup.html', jsonipdata=jsonipdata, lon=lat, lat=lon)
 
 @app.route('/<path:path>',methods=['GET'])
 def apiHandler(path):
