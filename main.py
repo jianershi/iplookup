@@ -19,7 +19,17 @@ def remote_addr(request):
 def index():
     ipaddr = remote_addr(request)
     jsonipdata=iplookup(ipaddr);
-    return render_template('iplookup.html', jsonipdata=jsonipdata)
+    try:
+        lon = json.loads(jsonipdata)['lon']
+        lat = json.loads(jsonipdata)['lat']
+    except KeyError:
+        lon = None
+        lat = None
+
+    if (lon == None or lat == None):
+        return render_template('iplookup.html', jsonipdata=jsonipdata)
+    elif (lon != None and lat !=None):
+        return render_template('iplookup.html', jsonipdata=jsonipdata, lon=lon, lat=lat)
 
 @app.route('/<path:path>',methods=['GET'])
 def apiHandler(path):
@@ -28,4 +38,4 @@ def apiHandler(path):
 	return render_template('iplookup.html', jsonipdata=jsonipdata)
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', debug=True)
