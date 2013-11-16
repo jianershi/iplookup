@@ -27,9 +27,6 @@ It will then run on port 5000
 ##Demo
 https://iplook.herokuapp.com
 
-This version uses ```HTTP_X_FORWARDED_FOR``` instead of ```REMOTE_ADDR```
-
-
 ##API
 Besides the current ip address the visitor is visiting this web app from, one can also do 
 
