@@ -15,10 +15,7 @@ def remote_addr(request):
     fwd = fwd.split(',')[0]
     return fwd
 
-@app.route('/')
-def index():
-    ipaddr = remote_addr(request)
-    jsonipdata=iplookup(ipaddr);
+def processPage(jsonipdata):
     try:
         lon = json.loads(jsonipdata)['lon']
         lat = json.loads(jsonipdata)['lat']
@@ -31,11 +28,17 @@ def index():
     elif (lon != None and lat !=None):
         return render_template('iplookup.html', jsonipdata=jsonipdata, lon=lat, lat=lon)
 
+@app.route('/')
+def index():
+    ipaddr = remote_addr(request)
+    jsonipdata=iplookup(ipaddr);
+    return processPage(jsonipdata)
+
 @app.route('/<path:path>',methods=['GET'])
 def apiHandler(path):
-	ipaddr = path
-	jsonipdata=iplookup(ipaddr)
-	return render_template('iplookup.html', jsonipdata=jsonipdata)
+    ipaddr = path
+    jsonipdata=iplookup(ipaddr);
+    return processPage(jsonipdata)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug=True)
