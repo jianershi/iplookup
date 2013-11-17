@@ -3,8 +3,17 @@ This script trys to make http://ip-api.com/json/ looks better on a daily use.
 
 The desktop view has a map on the bottom showing the current location of the ip. The mobile version is responsive without map and github banner
 
+##Demo
+https://iplook.herokuapp.com
+
 ##Setup
-Setup virtual environment
+First, get an mapID
+1. Go to https://www.mapbox.com/
+2. Create a map
+3. Click 'Share' -> 'Developer' and there is your mapId
+4. Go to ```config.py``` and put your mapid there.
+
+Then setup virtual environment
 
 ```
 virtualenv ev
@@ -23,11 +32,11 @@ Run
 python main.py
 ```
 
-It will then run on port 5000
+It will then run on http://localhost:5000
 
+Enjoy
 
-##Demo
-https://iplook.herokuapp.com
+:)
 
 ##API
 Besides the current ip address the visitor is visiting this web app from, one can also do 
