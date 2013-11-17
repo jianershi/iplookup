@@ -50,14 +50,14 @@
 
 {% if lon %}
 <script type="text/javascript">
-var map = L.mapbox.map('map', 'examples.map-9ijuk24y')
+var map = L.mapbox.map('map', '{{ mapid }}')
 function resizeMap()
 {
 	// console.log($( window ).height());
 	// console.log($("#container").height());
 	correctheight = $( window ).height() - $("#container").height()
  	$("#map").css("height",correctheight+"px") 
- 	map.setView([{{ lon }},{{ lat }}], 9);
+ 	map.setView([{{ lon }},{{ lat }}], 12);
 }
 $( document ).ready(function() {
 	resizeMap()
