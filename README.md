@@ -8,6 +8,7 @@ https://iplook.herokuapp.com
 
 ##Setup
 First, get an mapID
+
 1. Go to https://www.mapbox.com/
 2. Create a map
 3. Click 'Share' -> 'Developer' and there is your mapId
