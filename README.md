@@ -36,7 +36,11 @@ Besides the current ip address the visitor is visiting this web app from, one ca
 http://hostingAddress/ipAddress
 ```
 
-to get the info about a a specific ip address
+to get the info about a a specific ip address, or
+
+```
+http://hostingAddress/domainName
+```
 
 ##License
 ```
