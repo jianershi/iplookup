@@ -7,7 +7,6 @@
 <meta name="description" content="a simple ip lookup service with bootstrap template" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script type="text/javascript" src="{{ url_for('static', filename='prettify.js') }}"></script>
-<a href="https://github.com/paulshi/iplookup"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png" alt="Fork me on GitHub"></a>
 <script src='//api.tiles.mapbox.com/mapbox.js/v1.4.2/mapbox.js'></script>
 <script src='{{ url_for('static', filename='jquery-1.10.2.min.js') }}'></script>
 <link href='//api.tiles.mapbox.com/mapbox.js/v1.4.2/mapbox.css' rel='stylesheet' />
@@ -17,15 +16,19 @@
 
     @media only screen and (min-width: 0px) and (max-width: 480px){
     	    	#map {display:none;}
+    	    	#banner {display: none;}
 	}
     @media only screen and (min-width: 481px) {
     	#map {display:block;}
+    	#banner {display: block;}
 	}
 </style>
 
 </head>
 
 <body onload="prettyPrint()" bgcolor="white">
+<div id="banner"><a href="https://github.com/paulshi/iplookup"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png" alt="Fork me on GitHub"></a>
+</div>
 <div class="row-fluid" id="container">
 <div class="span12" >
 <!--Sidebar content-->
