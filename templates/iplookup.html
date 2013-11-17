@@ -58,6 +58,23 @@ function resizeMap()
 	correctheight = $( window ).height() - $("#container").height()
  	$("#map").css("height",correctheight+"px") 
  	map.setView([{{ lon }},{{ lat }}], 12);
+ 	L.mapbox.markerLayer({
+    // this feature is in the GeoJSON format: see geojson.org
+    // for the full specification
+    type: 'Feature',
+    geometry: {
+        type: 'Point',
+        // coordinates here are in longitude, latitude order because
+        // x, y is the standard for GeoJSON and many formats
+        coordinates: [ {{ lat }} , {{ lon }} ]
+    },
+    properties: {
+        // one can customize markers by adding simplestyle properties
+        // http://mapbox.com/developers/simplestyle/
+        'marker-size': 'large',
+        'marker-color': '#f0a'
+    }
+	}).addTo(map);
 }
 $( document ).ready(function() {
 	resizeMap()
