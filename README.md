@@ -7,7 +7,7 @@ The desktop view has a map on the bottom showing the current location of the ip.
 https://iplook.herokuapp.com or [iplook.tk](http://iplook.tk)
 
 ##Setup
-First, get an mapID
+First, get an mapID. My mapID is just a demo and will eventually run out of the free limit.
 
 1. Go to https://www.mapbox.com/
 2. Create a map

@@ -24,14 +24,14 @@ def processPage(jsonipdata):
         lat = None
 
     try:
-        from config import mapid
+        from config import mapid, defaultmapid
         try:
-            if mapid == None:
-                mapid = 'examples.map-9ijuk24y'
+            if mapid == '':
+                mapid = defaultmapid
         except UnboundLocalError:
-            mapid = 'examples.map-9ijuk24y'
+            mapid = defaultmapid
     except ImportError:
-        mapid = 'examples.map-9ijuk24y'
+        mapid = 'examples.map-dg7cqh4z'
 
     if (lon == None or lat == None):
         return render_template('iplookup.html', jsonipdata=jsonipdata)
