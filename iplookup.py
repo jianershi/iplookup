@@ -5,7 +5,7 @@ url="http://ip-api.com/json/"
 
 def iplookup(ipaddr):
 	"""
-	API call to the ip-api.com API
+	Calls to http://ip-api.com/docs/ API
 
 	:type ipaddr: str
 	:param ipaddr: ip address
