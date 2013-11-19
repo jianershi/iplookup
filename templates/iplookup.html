@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link href="{{ url_for('static', filename='css/bootstrap.css') }}" type="text/css" rel="stylesheet" />
-<link href="{{ url_for('static', filename='prettify.css') }}" type="text/css" rel="stylesheet" />
+<link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" type="text/css" rel="stylesheet" />
 <title>IP Lookup</title>
 <meta name="description" content="a simple ip lookup service with bootstrap template" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script type="text/javascript" src="{{ url_for('static', filename='prettify.js') }}"></script>
 <script src='//api.tiles.mapbox.com/mapbox.js/v1.4.2/mapbox.js'></script>
 <script src='{{ url_for('static', filename='jquery-1.10.2.min.js') }}'></script>
 <link href='//api.tiles.mapbox.com/mapbox.js/v1.4.2/mapbox.css' rel='stylesheet' />
@@ -22,21 +20,15 @@
     	#map {display:block;}
     	#banner {display: block;}
 	}
+
+  #language-json
+  {
+    color:#CB1B45;
+  }
 </style>
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-10055221-9', 'iplook.herokuapp.com');
-  ga('send', 'pageview');
-
-</script>
 </head>
 
-<body onload="prettyPrint()" bgcolor="white">
+<body bgcolor="white">
 <div id="banner"><a href="https://github.com/paulshi/iplookup"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png" alt="Fork me on GitHub"></a>
 </div>
 <div class="row-fluid" id="container">
@@ -44,8 +36,8 @@
 <!--Sidebar content-->
 
 
-<pre class="prettyprint languague-css">
-<code class="language-json">
+<pre>
+<code id="language-json">
 {{ jsonipdata }}
 </code>
 </pre>
@@ -95,4 +87,15 @@ $( window ).resize(function() {
 });
 </script>
 {% endif %}
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-10055221-9', 'iplook.herokuapp.com');
+  ga('send', 'pageview');
+
+</script>
 </html>
