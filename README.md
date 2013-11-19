@@ -53,7 +53,7 @@ http://hostingAddress/domainName
 ```
 
 ##Credits
-The backend API is powered by [IP Geolocation API](http://ip-api.com/docs). They provide free usage of their API for non-commercial use.
+The backend API is powered by [IP Geolocation API](http://ip-api.com/docs/). They provide free usage of their API for non-commercial use.
 
 The template is [Bootstrap](http://getbootstrap.com/).
 
