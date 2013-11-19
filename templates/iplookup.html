@@ -15,16 +15,29 @@
     @media only screen and (min-width: 0px) and (max-width: 480px){
     	    	#map {display:none;}
     	    	#banner {display: none;}
+            #twitter-button
+            {
+              position:relative;
+              left:2em;
+            }
 	}
     @media only screen and (min-width: 481px) {
     	#map {display:block;}
     	#banner {display: block;}
+      #twitter-button
+      {
+        position:relative;
+        bottom:4em;
+        float:right;
+      }
 	}
 
   #language-json
   {
     color:#CB1B45;
   }
+
+
 </style>
 </head>
 
@@ -41,6 +54,10 @@
 {{ jsonipdata }}
 </code>
 </pre>
+
+<div id='twitter-button'><a href="https://twitter.com/share" class="twitter-share-button" data-url="https://iplook.herokuapp.com" data-text="IP Look" data-via="hipaulshi">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></div>
+
 </div>
 </div>
 {% if lon %}
