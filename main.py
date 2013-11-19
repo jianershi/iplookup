@@ -4,8 +4,12 @@ from iplookup import *
 
 def remote_addr(request):
     """
-    The remote address of the client.
+    Get the IP address of the visiting client
+
     gist source: https://gist.github.com/coreydowning/4099188
+
+    :rtype: str
+    :return: ip address
     """
     fwd = request.environ.get('HTTP_X_FORWARDED_FOR', None)
     if fwd is None:
@@ -16,6 +20,13 @@ def remote_addr(request):
     return fwd
 
 def processPage(jsonipdata):
+    """
+    Helper function to process longitude and latitude and render the page
+
+    :type jsonipdata: str
+    :param jsonipdata: json string
+    """
+
     try:
         lon = json.loads(jsonipdata)['lon']
         lat = json.loads(jsonipdata)['lat']
@@ -40,12 +51,20 @@ def processPage(jsonipdata):
 
 @app.route('/')
 def index():
+    """default endpoint
+
+    Listing the current vistor information
+    """
     ipaddr = remote_addr(request)
     jsonipdata=iplookup(ipaddr);
     return processPage(jsonipdata)
 
 @app.route('/<path:path>',methods=['GET'])
 def apiHandler(path):
+    """API endpoint
+
+    Support /ipAddress and /domainName
+    """
     ipaddr = path
     jsonipdata=iplookup(ipaddr);
     return processPage(jsonipdata)
