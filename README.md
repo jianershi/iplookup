@@ -4,11 +4,7 @@ This script trys to make http://ip-api.com/json/ looks better on a daily use.
 The desktop view has a map on the bottom showing the current location of the ip. The mobile version is responsive without map and github banner
 
 ##Demo
-https://iplook.herokuapp.com
-
-or 
-
-[iplook.tk](http://iplook.tk)
+https://iplook.herokuapp.com or [iplook.tk](http://iplook.tk)
 
 ##Setup
 First, get an mapID
