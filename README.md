@@ -6,6 +6,10 @@ The desktop view has a map on the bottom showing the current location of the ip.
 ##Demo
 https://iplook.herokuapp.com
 
+or 
+
+[iplook.tk](http://iplook.tk)
+
 ##Setup
 First, get an mapID
 
