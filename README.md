@@ -52,6 +52,17 @@ to get the info about a a specific ip address, or
 http://hostingAddress/domainName
 ```
 
+##Credits
+The backend API is powered by [IP Geolocation API](http://ip-api.com/docs). They provide free usage of their API for non-commercial use.
+
+The template is [Bootstrap](http://getbootstrap.com/).
+
+The color of the text is 紅(kurenai) from [Nippon Colors](http://nipponcolors.com/#kurenai).
+
+The map is created in [Mapbox](https://www.mapbox.com/).
+
+The web framework used is [Flask](http://flask.pocoo.org/).
+
 ##License
 ```
 The MIT License (MIT)
