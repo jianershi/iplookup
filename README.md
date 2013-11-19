@@ -1,4 +1,5 @@
-#IP Lookup
+![img](https://raw.github.com/paulshi/iplookup/master/logo.png)
+
 This script trys to make http://ip-api.com/json/ looks better on a daily use. 
 
 The desktop view has a map on the bottom showing the current location of the ip. The mobile version is responsive without map and github banner
