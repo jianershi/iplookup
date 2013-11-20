@@ -42,7 +42,7 @@ def processPage(jsonipdata):
         except UnboundLocalError:
             mapid = defaultmapid
     except ImportError:
-        mapid = 'examples.map-dg7cqh4z'
+        mapid = 'examples.map-20v6611k'
 
     if (lon == None or lat == None):
         return render_template('iplookup.html', jsonipdata=jsonipdata)
