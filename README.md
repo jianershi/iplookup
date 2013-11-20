@@ -12,7 +12,7 @@ http://iplook.herokuapp.com/72.36.64.0   - specific ip lookup
 http://iplook.herokuapp.com/mit.edu   - domain name lookup
 
 ##Setup
-First, get an mapID. My mapID is just a demo and will eventually run out of the free limit.
+First, get an mapID
 
 1. Go to https://www.mapbox.com/
 2. Create a map
