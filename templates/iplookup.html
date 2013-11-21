@@ -68,6 +68,8 @@ function initialize() {
   var marker = new google.maps.Marker({
     position: myLatlng,
     map: map,
+    icon: new google.maps.MarkerImage('{{ url_for('static', filename='noun_project_16939.svg') }}',
+    null, null, null, new google.maps.Size(50,50)),
     animation: google.maps.Animation.DROP,
   });
 

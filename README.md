@@ -42,6 +42,8 @@ The backend API is powered by [IP Geolocation API](http://ip-api.com/docs/). The
 
 The template is [Bootstrap](http://getbootstrap.com/).
 
+[Google Map Marker](http://thenounproject.com/noun/map-marker/#icon-No16939) was designed by [Kelly Walker](http://thenounproject.com/kellylesliewalker/) from The Noun Project
+
 The color of the text is 紅(kurenai) from [Nippon Colors](http://nipponcolors.com/#kurenai).
 
 The web framework used is [Flask](http://flask.pocoo.org/).
