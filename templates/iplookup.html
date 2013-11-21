@@ -5,27 +5,23 @@
 <title>IP Lookup</title>
 <meta name="description" content="a simple ip lookup service with bootstrap template" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src='//api.tiles.mapbox.com/mapbox.js/v1.4.2/mapbox.js'></script>
 <script src='{{ url_for('static', filename='jquery-1.10.2.min.js') }}'></script>
-<link href='//api.tiles.mapbox.com/mapbox.js/v1.4.2/mapbox.css' rel='stylesheet' />
 <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 <meta property="og:image" content="{{ url_for('static', filename='fbgraph.png', _external=True) }}" />
 <meta property="fb:admins" content="1369375359" />
 <style>
-    #map {position:absolute;bottom: 0; width:100%; }
+    #map-canvas  {position:absolute;bottom: 0; width:100%; }
 
     @media only screen and (min-width: 0px) and (max-width: 480px){
-    	    	#map {display:none;}
+    	    	#map-canvas {display:none;}
     	    	#banner {display: none;}
             #social-button
             {
-              /*position:relative;*/
-              /*left:2em;*/
               display:none;
             }
 	}
     @media only screen and (min-width: 481px) {
-    	#map {display:block;}
+    	#map-canvas  {display:block;}
     	#banner {display: block;}
       #social-button
       {
@@ -43,6 +39,74 @@
 
 
 </style>
+<script type="text/javascript">
+{% if lon %}
+
+var styles;
+var map;
+var myLatlng;
+
+//load map style file
+$.getScript("{{ url_for('static', filename='googlemapStyle.js') }}", function(){});
+
+function initialize() {
+  myLatlng = new google.maps.LatLng( {{ lon }} , {{ lat }})
+  var mapOptions = {
+    zoom: 12,
+    center: myLatlng,
+    mapTypeControlOptions: {
+      mapTypeIds: [ 'Styled']
+    },
+    mapTypeId: 'Styled',
+    streetViewControl: false
+  };
+
+  map = new google.maps.Map(document.getElementById('map-canvas'),
+      mapOptions);
+  var styledMapType = new google.maps.StyledMapType(styles, {name:""});
+  map.mapTypes.set('Styled', styledMapType);
+
+  var marker = new google.maps.Marker({
+    position: myLatlng,
+    map: map,
+    animation: google.maps.Animation.DROP,
+  });
+
+}
+
+//async load map
+function loadScript() {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&' +
+      'callback=initialize';
+  document.body.appendChild(script);
+}
+
+//Recenter Map
+function recenterMap()
+{
+  map.setOptions({
+        center: myLatlng,
+    });
+}
+
+//Resize Map to the remainder of the screen
+function resizeMap()
+{
+  correctheight = $( window ).height() - $("#container").height()
+  $("#map-canvas").css("height",correctheight+"px") 
+}
+$( document ).ready(function() {
+  loadScript()
+  resizeMap()
+});
+$( window ).resize(function() {
+  resizeMap()
+  recenterMap();
+});
+{% endif %}
+</script>
 </head>
 
 <body bgcolor="white">
@@ -66,7 +130,7 @@
 </div>
 </div>
 {% if lon %}
-<div id='map'>
+<div id='map-canvas'>
 </div>
 {% endif %}
 
@@ -74,39 +138,7 @@
 
 {% if lon %}
 <script type="text/javascript">
-var map = L.mapbox.map('map', '{{ mapid }}')
-L.mapbox.markerLayer({
-// this feature is in the GeoJSON format: see geojson.org
-// for the full specification
-type: 'Feature',
-geometry: {
-    type: 'Point',
-    // coordinates here are in longitude, latitude order because
-    // x, y is the standard for GeoJSON and many formats
-    coordinates: [ {{ lat }} , {{ lon }} ]
-},
-properties: {
-    // one can customize markers by adding simplestyle properties
-    // http://mapbox.com/developers/simplestyle/
-    'marker-size': 'large',
-    'marker-color': '#f0a'
-}
-}).addTo(map);
 
-function resizeMap()
-{
-	// console.log($( window ).height());
-	// console.log($("#container").height());
-	correctheight = $( window ).height() - $("#container").height()
- 	$("#map").css("height",correctheight+"px") 
- 	map.setView([{{ lon }},{{ lat }}], 12);
-}
-$( document ).ready(function() {
-	resizeMap()
-});
-$( window ).resize(function() {
-	resizeMap()
-});
 </script>
 {% endif %}
 <!--Google Analytics Code-->

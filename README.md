@@ -12,14 +12,7 @@ http://iplook.herokuapp.com/72.36.64.0   - specific ip lookup
 http://iplook.herokuapp.com/mit.edu   - domain name lookup
 
 ##Setup
-First, get an mapID
-
-1. Go to https://www.mapbox.com/
-2. Create a map
-3. Click 'Share' -> 'Developer' and there is your mapId
-4. Go to ```config.py``` and put your mapid there.
-
-Then setup virtual environment
+Setup virtual environment
 
 ```
 virtualenv ev
@@ -50,8 +43,6 @@ The backend API is powered by [IP Geolocation API](http://ip-api.com/docs/). The
 The template is [Bootstrap](http://getbootstrap.com/).
 
 The color of the text is 紅(kurenai) from [Nippon Colors](http://nipponcolors.com/#kurenai).
-
-The map is created in [Mapbox](https://www.mapbox.com/).
 
 The web framework used is [Flask](http://flask.pocoo.org/).
 

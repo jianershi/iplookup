@@ -34,20 +34,10 @@ def processPage(jsonipdata):
         lon = None
         lat = None
 
-    try:
-        from config import mapid, defaultmapid
-        try:
-            if mapid == '':
-                mapid = defaultmapid
-        except UnboundLocalError:
-            mapid = defaultmapid
-    except ImportError:
-        mapid = 'examples.map-20v6611k'
-
     if (lon == None or lat == None):
         return render_template('iplookup.html', jsonipdata=jsonipdata)
     elif (lon != None and lat !=None):
-        return render_template('iplookup.html', jsonipdata=jsonipdata, lon=lat, lat=lon, mapid=mapid)
+        return render_template('iplookup.html', jsonipdata=jsonipdata, lon=lat, lat=lon)
 
 @app.route('/')
 def index():
