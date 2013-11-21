@@ -42,14 +42,13 @@
 <script type="text/javascript">
 {% if lon %}
 
-var styles;
 var map;
 var myLatlng;
 
 //load map style file
-$.getScript("{{ url_for('static', filename='googlemapStyle.js') }}", function(){});
-
 function initialize() {
+  $.getScript("{{ url_for('static', filename='googlemapStyle.js') }}", function(){
+
   myLatlng = new google.maps.LatLng( {{ lon }} , {{ lat }})
   var mapOptions = {
     zoom: 12,
@@ -70,6 +69,8 @@ function initialize() {
     position: myLatlng,
     map: map,
     animation: google.maps.Animation.DROP,
+  });
+
   });
 
 }
