@@ -76,6 +76,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ```
 ##Why Did I Build This?
-[http://paulshi.github.io/technical/2013/11/21/IP-Look.html](http://paulshi.github.io/technical/2013/11/21/IP-Look.html)
+[http://blog.paulshi.me/technical/2013/11/21/IP-Look.html](http://blog.paulshi.me/technical/2013/11/21/IP-Look.html)
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/paulshi/iplookup/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
