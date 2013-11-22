@@ -48,8 +48,11 @@ The color of the text is 紅(kurenai) from [Nippon Colors](http://nipponcolors.c
 
 The web framework used is [Flask](http://flask.pocoo.org/).
 
+##Google Map Styling
+If you are wondering how you can reuse my Google Map styling, I have created a simple version here: [https://github.com/paulshi/GoogleMapStyling](https://github.com/paulshi/GoogleMapStyling)
+
 ##Documentation
-http://iplookup.readthedocs.org/
+[http://iplookup.readthedocs.org/](http://iplookup.readthedocs.org/)
 
 ##License
 ```
