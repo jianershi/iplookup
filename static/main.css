@@ -1,0 +1,51 @@
+html { height: 100% }
+body { height: 100%; margin: 0; padding: 0 }
+#map-canvas { 
+  height: 100%; 
+  width:100%; 
+  top:0;
+  bottom:0;
+  position:absolute;
+  z-index: -1;
+}
+#ipToSearch
+{
+  width:80%;
+  margin:auto;
+}
+#language-json
+{
+  color:#CB1B45;
+}
+@media only screen and (min-width: 0px) and (max-width: 480px){
+	#map-canvas {display:none;}
+	#banner {display: none;}
+  #social-button  { display:none;}
+}
+
+@media only screen and (min-width: 481px) {
+	#map-canvas  {display:block;}
+	#banner {display: block;}
+  #social-button
+  {
+    position:relative;
+    right:1em;
+    float:right;
+  }
+
+  #container
+  {
+    opacity: 0.9;
+    position:absolute;
+    right:1em;
+    bottom:1em;
+    background: white;
+    border-radius: 1em
+  }
+
+  pre
+  {
+    border-radius:1em;
+    border:none;
+  }
+}

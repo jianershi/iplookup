@@ -9,36 +9,8 @@
 <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 <meta property="og:image" content="{{ url_for('static', filename='fbgraph.png', _external=True) }}" />
 <meta property="fb:admins" content="1369375359" />
-<style>
-    #map-canvas  {position:absolute;bottom: 0; width:100%; }
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
 
-    @media only screen and (min-width: 0px) and (max-width: 480px){
-    	    	#map-canvas {display:none;}
-    	    	#banner {display: none;}
-            #social-button
-            {
-              display:none;
-            }
-	}
-    @media only screen and (min-width: 481px) {
-    	#map-canvas  {display:block;}
-    	#banner {display: block;}
-      #social-button
-      {
-        position:relative;
-        bottom:4em;
-        right:1em;
-        float:right;
-      }
-	}
-
-  #language-json
-  {
-    color:#CB1B45;
-  }
-
-
-</style>
 <script type="text/javascript">
 {% if lon %}
 
@@ -62,7 +34,7 @@ function initialize() {
 
   map = new google.maps.Map(document.getElementById('map-canvas'),
       mapOptions);
-  var styledMapType = new google.maps.StyledMapType(styles, {name:""});
+  var styledMapType = new google.maps.StyledMapType(styles, {name:"IP Look"});
   map.mapTypes.set('Styled', styledMapType);
 
   var marker = new google.maps.Marker({
@@ -93,44 +65,48 @@ function recenterMap()
         center: myLatlng,
     });
 }
-
-//Resize Map to the remainder of the screen
-function resizeMap()
-{
-  correctheight = $( window ).height() - $("#container").height()
-  $("#map-canvas").css("height",correctheight+"px") 
-}
 $( document ).ready(function() {
   loadScript()
-  resizeMap()
 });
 $( window ).resize(function() {
   resizeMap()
-  recenterMap();
 });
 {% endif %}
 </script>
 </head>
 
+
+
+
 <body bgcolor="white">
 <div id="banner"><a href="https://github.com/paulshi/iplookup"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png" alt="Fork me on GitHub"></a>
 </div>
+
 <div class="row-fluid" id="container">
-<div class="span12" >
-<!--Sidebar content-->
-
-
 <pre>
 <code id="language-json">
 {{ jsonipdata }}
 </code>
 </pre>
 
+<div>
+  <script>
+  function submitForm()
+  {
+    urlToRedirectTo= "http://"+window.location.host+'/'+document.getElementById("ipToSearch").value;
+    window.location = urlToRedirectTo
+  }
+  </script>
+  <form role="form" .form-inline method="GET" onsubmit="submitForm(); return false;">
+    <input type="text" class="form-control" placeholder="IP/Domain Name" id="ipToSearch" autofocus>
+  </form>
+</div>
+<p>
 <div id='social-button'><a href="https://twitter.com/hipaulshi" class="twitter-follow-button" data-show-count="false">Follow @hipaulshi</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 </div>
+<br />
 
-</div>
 </div>
 {% if lon %}
 <div id='map-canvas'>
