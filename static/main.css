@@ -24,7 +24,14 @@ body { height: 100%; margin: 0; padding: 0 }
 
 @media only screen and (min-width: 481px) {
 	#map-canvas  {display:block;}
-	#banner {display: block;}
+	#banner {
+    display: block;
+    position:absolute;
+    z-index: 1;
+    top: 0; 
+    right: 0; 
+    border: 0;
+  }
   #social-button
   {
     position:relative;
