@@ -39,7 +39,7 @@ body { height: 100%; margin: 0; padding: 0 }
     right:1em;
     bottom:1em;
     background: white;
-    border-radius: 1em
+    border-radius: 1em;
     z-index: 1;
   }
 
