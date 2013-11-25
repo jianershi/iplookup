@@ -7,7 +7,7 @@ The desktop view has a map on the bottom showing the current location of the ip.
 ##Demo
 https://iplook.herokuapp.com
 
-http://iplook.co (http only)
+http://iplook.co (http only, it is redirected to heroku anyway, but easier to remember I suppose)
 
 ##Setup
 Setup virtual environment
