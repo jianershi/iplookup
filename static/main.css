@@ -6,7 +6,6 @@ body { height: 100%; margin: 0; padding: 0 }
   top:0;
   bottom:0;
   position:absolute;
-  z-index: -1;
 }
 #ipToSearch
 {
@@ -41,6 +40,7 @@ body { height: 100%; margin: 0; padding: 0 }
     bottom:1em;
     background: white;
     border-radius: 1em
+    z-index: 1;
   }
 
   pre
