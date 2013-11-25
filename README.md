@@ -5,11 +5,9 @@ This script trys to make http://ip-api.com/json/ looks better on a daily use.
 The desktop view has a map on the bottom showing the current location of the ip. The mobile version is responsive without map and github banner
 
 ##Demo
-https://iplook.herokuapp.com   - my ip
+https://iplook.herokuapp.com
 
-http://iplook.herokuapp.com/72.36.64.0   - specific ip lookup
-
-http://iplook.herokuapp.com/mit.edu   - domain name lookup
+http://iplook.co (http only)
 
 ##Setup
 Setup virtual environment
