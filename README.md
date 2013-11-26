@@ -1,3 +1,8 @@
+##Outdate Notice
+This version has been superseded by [IP Lookup Version 2](https://github.com/paulshi/iplookup2)
+
+---
+
 #IP Lookup
 ![img](https://raw.github.com/paulshi/iplookup/master/logo.png)
 
