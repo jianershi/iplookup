@@ -1,3 +1,4 @@
+#IP Lookup
 ![img](https://raw.github.com/paulshi/iplookup/master/logo.png)
 
 This script trys to make http://ip-api.com/json/ looks better on a daily use. 
@@ -7,7 +8,10 @@ The desktop view has a map on the bottom showing the current location of the ip.
 ##Demo
 https://iplook.herokuapp.com
 
-http://iplook.co (http only, it is redirected to heroku anyway, but easier to remember I suppose)
+##IP Lookup Version 2
+An Ajax static implementation is also available. It is much faster in response time. Doesn't rely on Flask and heroku anymore and instead hosted on github.
+
+[https://github.com/paulshi/iplookup2](https://github.com/paulshi/iplookup2)
 
 ##Setup
 Setup virtual environment
