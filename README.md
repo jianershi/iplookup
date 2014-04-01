@@ -1,8 +1,3 @@
-##Outdate Notice
-This version has been superseded by [IP Lookup Version 2](https://github.com/paulshi/iplookup2)
-
----
-
 #IP Lookup
 ![img](https://raw.github.com/paulshi/iplookup/master/logo.png)
 
@@ -12,11 +7,6 @@ The desktop view has a map on the bottom showing the current location of the ip.
 
 ##Demo
 [https://iplook.herokuapp.com](https://iplook.herokuapp.com)
-
-##IP Lookup Version 2
-An Ajax static implementation is also available. It is much faster in response time. Doesn't rely on Flask and heroku anymore and instead hosted on github.
-
-[https://github.com/paulshi/iplookup2](https://github.com/paulshi/iplookup2)
 
 ##Setup
 Setup virtual environment
